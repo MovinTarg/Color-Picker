@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Color Picker</title>
+        <link rel="stylesheet" types="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+        <script rel="text/javascript" src="script.js"></script>
+        <style>
+            #container {
+                background-color: rgb({{red}}, {{green}}, {{blue}});
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <form action="/showColor" method="post">
+                <h1>Enter your color values below:</h1>
+                <p>Red:</p>
+                <input type="text" name="red">
+                <p>Green:</p>
+                <input type="text" name="green">
+                <p>Blue:</p>
+                <input type="text" name="blue">
+                <p class='instructions'>* All values must be between 1 and 255</p>
+                <input type="submit" value="Show my color">
+            </form>
+        </div>
+    </body>
+</html>
